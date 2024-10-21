@@ -72,11 +72,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 // Mongoose Schema and Model for form data
 const formSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    phone: { type: String, required: true },
-    project: { type: String, required: true },
-    message: { type: String, required: true }
+    name:  String,
+    email:  String,
+    phone: String,
+    project:  String,
+    message:  String
 });
 
 const Form = mongoose.model('Form', formSchema);
