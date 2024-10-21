@@ -98,8 +98,10 @@ app.post('/submit-form', async (req, res) => {
         // Explicitly set status to 200 OK and send a success message
         res.status(200).send('Form data saved successfully!');
     } catch (err) {
-        console.error('Error saving form data:', err); // Log the error
-        res.status(500).send('Error saving form data'); // Send back error response
+        console.error('Error saving form data:', err); // Log error details in the console
+
+        // Send back a 500 response with the error message for easier debugging
+        res.status(500).send(`Error saving form data: ${err.message}`);
     }
 });
 
